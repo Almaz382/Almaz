@@ -2,7 +2,7 @@ import vk_api
 from vk_api.longpoll import VkLongPoll, VkEventType
 import random
 from random import choice
-Token = 'vk1.a.o_H4wJdw2C8nrf0KbmYDy6wvCsXcnvGXt-BfZP6ZHAdChQ-J5iOCf6kyRZFH5vh35oSu0UDXs8cvoEZVV6bB1fOpE_y5UxU7cBhdHvFDhxGws-Gz3m7lecKTfk6wNoTNga10O3OwAn5pRSKTNg5ux5BU1SLSljFBezsyk-mRwblg7Y56U8F68YPWeXp52bEs6XRE0ogPSUp_HhAG2xmbXQ'
+Token = ИМЯ_ВАШЕГО_СЕКРЕТА
 vk_session = vk_api.VkApi(token = Token)
 longpoll = VkLongPoll(vk_session)
 vk = vk_session.get_api()
@@ -37,4 +37,5 @@ for event in longpoll.listen():
                     out = 'Ты проиграл! (хахахахаах)'
                 else: out = 'Ты победил :('
             
+
             vk.messages.send(user_id=event.user_id, message=out, random_id = random.randint(1, 100000))                       
