@@ -2,7 +2,7 @@ import vk_api
 from vk_api.longpoll import VkLongPoll, VkEventType
 import random
 from random import choice
-Token = ИМЯ_ВАШЕГО_СЕКРЕТА
+Token = NAME_YOUR_SECRET
 vk_session = vk_api.VkApi(token = Token)
 longpoll = VkLongPoll(vk_session)
 vk = vk_session.get_api()
@@ -39,3 +39,4 @@ for event in longpoll.listen():
             
 
             vk.messages.send(user_id=event.user_id, message=out, random_id = random.randint(1, 100000))                       
+
